@@ -1,0 +1,62 @@
+---
+const { title, body, img, alt } = Astro.props.data
+---
+
+<div data-card-highlight class="card card-highlights">
+    <img src={img} alt={alt} />
+    <div class="card__body">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            stroke="currentColor"
+            stroke-width="3"
+            fill="currentColor"
+            class="bi bi-chevron-up"
+            viewBox="0 0 16 16"
+        >
+            <path
+                fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+            ></path>
+        </svg>
+        <h5>{title}</h5>
+        <p>{body}</p>
+    </div>
+</div>
+
+<style>
+    .card {
+        overflow: hidden;
+    }
+    .card__body {
+        text-align: center;
+        background-color: rgba(17, 101, 180, 0.7);
+        height: 100%;
+        color: white;
+        position: absolute;
+        transform: translateY(75%);
+        cursor: pointer;
+        transition: transform 300ms;
+    }
+
+    .card__body h5 {
+        font-size: 1.3rem;
+    }
+
+    .showBody .card__body {
+        transform: translateY(0);
+    }
+</style>
+
+<script>
+    const cards = document.querySelectorAll('[data-card-highlight]')
+
+    function toggleBodyContent(card: Element) {
+        card.classList.toggle('showBody')
+    }
+
+    cards.forEach((card) => {
+        card.addEventListener('click', () => toggleBodyContent(card))
+    })
+</script>

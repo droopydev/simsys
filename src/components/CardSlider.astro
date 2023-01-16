@@ -1,0 +1,59 @@
+---
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+const { data } = Astro.props
+---
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+        <slot />
+    </div>
+    <div class="swiper-button-prev">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            stroke-width="3"
+            stroke="#0857a1"
+            fill="#0857a1"
+            class="bi bi-chevron-left"
+            viewBox="0 0 16 16"
+        >
+            <path
+                fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            ></path>
+        </svg>
+    </div>
+    <div class="swiper-button-next">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            stroke-width="3"
+            stroke="#0857a1"
+            fill="#0857a1"
+            class="bi bi-chevron-right"
+            viewBox="0 0 16 16"
+        >
+            <path
+                fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+            ></path>
+        </svg>
+    </div>
+</div>
+
+<style>
+    .swiper {
+        padding-left: 1rem;
+    }
+
+    [class^='swiper-button-'] {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 100%;
+    }
+</style>

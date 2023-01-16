@@ -1,81 +1,400 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import 'swiper/css'
+import 'swiper/css/navigation'
+
+import Layout from '../layouts/Layout.astro'
+import Carousel from '../components/Carousel.astro'
+import Card from '../components/Card.astro'
+import CardHighlights from '../components/CardHighlights.astro'
+import CardSlider from '../components/CardSlider.astro'
+import Accordian from '../components/Accordian.astro'
+
+import imgServiceOne from '../assets/images/service_one.png'
+import imgServiceTwo from '../assets/images/service_two.png'
+import imgServiceThree from '../assets/images/service_three.png'
+import imgServiceFour from '../assets/images/service_four.png'
+import imgServiceFive from '../assets/images/service_five.png'
+
+import imgHighlightsOne from '../assets/images/highlights_one.png'
+import imgHighlightsTwo from '../assets/images/highlights_two.png'
+import imgHighlightsThree from '../assets/images/highlights_three.png'
+
+import imgPmOne from '../assets/images/pm_1.png'
+import imgPmTwo from '../assets/images/pm_2.png'
+import imgPmThree from '../assets/images/pm_3.png'
+import imgPmAll from '../assets/images/pm_all.png'
+
+const CardConfig = [
+    {
+        title: 'Deciding on IT Solutions',
+        cardColor: '#f8838e',
+        img: imgServiceOne,
+        alt: 'Deciding on IT Solutions',
+    },
+    {
+        title: 'Document Management',
+        cardColor: '#eab32b',
+        img: imgServiceTwo,
+        alt: 'Document Maagement',
+    },
+    {
+        title: 'Enterprise Resource Planning',
+        cardColor: '#d8a8a5',
+        img: imgServiceThree,
+        alt: 'Enterprise Resource Planning',
+    },
+    {
+        title: 'IA and Usability Engineering',
+        cardColor: '#41bcd8',
+        img: imgServiceFour,
+        alt: 'IA',
+    },
+    {
+        title: 'Web Content Management',
+        cardColor: '#c9b6e8',
+        img: imgServiceFive,
+        alt: 'Web',
+    },
+    {
+        title: 'Deciding on IT Solutions',
+        cardColor: '#f8838e',
+        img: imgServiceOne,
+        alt: 'Deciding on IT Solutions',
+    },
+    {
+        title: 'Document Management',
+        cardColor: '#eab32b',
+        img: imgServiceTwo,
+        alt: 'Document Maagement',
+    },
+    {
+        title: 'Enterprise Resource Planning',
+        cardColor: '#d8a8a5',
+        img: imgServiceThree,
+        alt: 'Enterprise Resource Planning',
+    },
+    {
+        title: 'IA and Usability Engineering',
+        cardColor: '#41bcd8',
+        img: imgServiceFour,
+        alt: 'IA',
+    },
+]
+
+const HighlightsConfig = [
+    {
+        title: 'consultation',
+        body: 'Occaecat exercitation eiusmod excepteur aute irure aute sit consequat id ea commodo elit.',
+        img: imgHighlightsOne,
+        alt: 'Jigsaw Puzzle',
+    },
+    {
+        title: 'hosting service',
+        body: 'Occaecat exercitation eiusmod excepteur aute irure aute sit consequat id ea commodo elit.',
+        img: imgHighlightsTwo,
+        alt: 'Office Workers',
+    },
+    {
+        title: 'small Buisness ',
+        body: 'Occaecat exercitation eiusmod excepteur aute irure aute sit consequat id ea commodo elit.',
+        img: imgHighlightsThree,
+        alt: 'Mindmap about Computer Network',
+    },
+]
+
+const FAQconfig = [
+    {
+        title: 'Are you able to support my small buisness?',
+        body: 'As a Microsoft Partner, we are also recognized as a Microsoft Small Business Specialist, click here to find us on Microsoft Pinpoint',
+    },
+    {
+        title: 'What are the services your provide?',
+        body: 'As a Microsoft Partner, we are also recognized as a Microsoft Small Business Specialist, click here to find us on Microsoft Pinpoint',
+    },
+    {
+        title: 'Are you hiring?',
+        body: 'As a Microsoft Partner, we are also recognized as a Microsoft Small Business Specialist, click here to find us on Microsoft Pinpoint',
+    },
+    {
+        title: 'How do I contact you?',
+        body: 'As a Microsoft Partner, we are also recognized as a Microsoft Small Business Specialist, click here to find us on Microsoft Pinpoint',
+    },
+]
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+    <main class="px-0 main">
+        <Carousel />
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+        <section class="pt-5 bg-white">
+            <h2 class="mb-4" style="padding: 0 1rem">Our Services</h2>
+            <CardSlider>
+                {
+                    CardConfig.map(({ title, cardColor, img, alt }) => {
+                        return (
+                            <div class="swiper-slide">
+                                <Card
+                                    title={title}
+                                    cardColor={cardColor}
+                                    img={img}
+                                    alt={alt}
+                                />
+                            </div>
+                        )
+                    })
+                }
+            </CardSlider>
+        </section>
+
+        <section class="pt-5 bg-white section-width">
+            <h2>Our Highlights</h2>
+            <div class="highlights__card-wrapper">
+                {
+                    HighlightsConfig.map((item) => {
+                        return <CardHighlights data={item} />
+                    })
+                }
+            </div>
+        </section>
+
+        <section class="mt-5 mb-5 section-width">
+            <h2>Ask @Simsys</h2>
+            <p class="mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="mt-4">
+                <Accordian data={FAQconfig} />
+            </div>
+        </section>
+
+        <section class="pt-5 p bg-white section-width">
+            <h2>Project Management</h2>
+            <div class="project__content">
+                <div>
+                    <p class="mt-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris
+                        nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.
+                    </p>
+                    <div class="project__small-images">
+                        <img
+                            src={imgPmOne}
+                            alt="Icon of a Conversation Bubble"
+                        />
+                        <img
+                            src={imgPmTwo}
+                            alt="Icon of a Conversation Bubble"
+                        />
+                        <img
+                            src={imgPmThree}
+                            alt="Icon of a Conversation Bubble"
+                        />
+                    </div>
+                </div>
+                <div class="project__large-image">
+                    <img src={imgPmAll} alt="Multiple Technology Icons" />
+                </div>
+            </div>
+        </section>
+
+        <section class="recommendations bg-white">
+            <h2 class="mb-5" style="padding: 0 1rem">Recommendations</h2>
+            <CardSlider>
+                {
+                    CardConfig.map(({ title, img, alt }) => {
+                        return (
+                            <div class="swiper-slide">
+                                <Card
+                                    title={title}
+                                    cardColor="var(--color-dark-blue)"
+                                    textColor="white"
+                                    img={img}
+                                    alt={alt}
+                                    hoverInteraction={true}
+                                />
+                            </div>
+                        )
+                    })
+                }
+            </CardSlider>
+            <button class="button-up" onclick="window.scrollTo(0, 0)"
+                ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="25"
+                    height="25"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1"
+                    class="bi bi-chevron-double-up"
+                    viewBox="0 0 16 16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"
+                    ></path>
+                    <path
+                        fill-rule="evenodd"
+                        d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+                    ></path>
+                </svg></button
+            >
+        </section>
+    </main>
+
+    <style>
+        main {
+            max-width: var(--layout-max-width);
+            margin: 0 auto;
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .section-width {
+            padding: 0 1rem;
+        }
+
+        .highlights__card-wrapper {
+            display: grid;
+            grid-template-rows: repeat(3, fit-content(350px));
+            row-gap: 2.5rem;
+            padding: 2rem 0;
+        }
+
+        .project__content {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .project__small-images {
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 1rem;
+            margin-top: 2rem;
+        }
+        .project__large-image {
+            display: none;
+        }
+
+        .recommendations {
+            padding-top: 3rem;
+            padding-bottom: 8rem;
+            position: relative;
+        }
+
+        .button-up {
+            position: absolute;
+            background-color: var(--color-dark-blue);
+            border-style: none;
+            padding: 2rem 0.5rem;
+            left: 47%;
+            bottom: -3rem;
+        }
+
+        .button-up svg {
+            color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .project__large-image {
+                display: block;
+                flex: 1 0 40%;
+                margin: auto 0;
+            }
+            .project__small-images {
+                flex-direction: row;
+                justify-content: space-around;
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 4rem;
+            }
+
+            .highlights__card-wrapper {
+                grid-template-columns: repeat(3, fit-content(250px));
+                column-gap: 2.5rem;
+                justify-content: center;
+                padding: 2rem 0;
+            }
+        }
+        @media (min-width: 640px) {
+            .highlights__card-wrapper {
+                grid-template-columns: repeat(3, fit-content(250px));
+                column-gap: 2.5rem;
+                justify-content: center;
+                padding: 2rem 0;
+            }
+        }
+    </style>
+
+    <script>
+        import Swiper, { Navigation } from 'swiper'
+
+        // https://swiperjs.com/get-started
+        const swiper = new Swiper('.swiper', {
+            speed: 400,
+            centeredSlides: true,
+            modules: [Navigation],
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                // when window width is >= 640px
+                640: {
+                    centeredSlides: false,
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+                800: {
+                    centeredSlides: false,
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                },
+                1080: {
+                    centeredSlides: false,
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                },
+            },
+        })
+
+        function goToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+    </script>
+</Layout>

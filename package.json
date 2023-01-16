@@ -11,7 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource/twinkle-star": "^4.5.9",
-    "astro": "^1.9.0"
+    "@fontsource/lato": "^4.5.10",
+    "astro": "^1.9.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3",
+    "swiper": "^8.4.5"
   }
 }

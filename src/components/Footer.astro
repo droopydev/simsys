@@ -1,0 +1,45 @@
+---
+---
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>Privacy Policy</p>
+            <p>Terms of Use</p>
+        </div>
+        <p>&copy; 2022 Simple Solution Systems, All Rights Reserved</p>
+    </div>
+</footer>
+
+<style>
+    .footer-content {
+        width: 90%;
+        max-width: var(--layout-max-width);
+        margin: 0 auto;
+        margin-top: 3rem;
+        display: flex;
+
+        position: relative;
+        padding: 1.5rem 0;
+        text-align: center;
+    }
+
+    .footer-content > p:last-child {
+        display: inline-block;
+    }
+
+    .footer-text > p {
+        display: inline-block;
+    }
+
+    .footer-text > p:first-child {
+        margin-right: 1rem;
+    }
+
+    @media (min-width: 680px) {
+        .footer-content {
+            justify-content: space-between;
+            flex-flow: row wrap;
+        }
+    }
+</style>

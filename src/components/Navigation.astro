@@ -1,0 +1,121 @@
+---
+import brandLogo from '../assets/logo.png'
+---
+
+<nav class="navbar__container">
+    <div class="navbar__content">
+        <a href="#" class="navbar__logo"
+            ><img src={brandLogo} alt="Symslink Logo" /></a
+        >
+        <div class="navlinks__wrapper">
+            <ul class="links">
+                <li>Home</li>
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Our Story</a></li>
+                        <li>
+                            <a class="dropdown-item" href="#">Our Vision</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>News</li>
+                <li>Career</li>
+            </ul>
+            <div class="navlink__search">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17.999"
+                    height="18.002"
+                    viewBox="0 0 17.999 18.002"
+                >
+                    <path
+                        id="Icon_awesome-search"
+                        data-name="Icon awesome-search"
+                        d="M17.754,15.564l-3.505-3.505a.843.843,0,0,0-.6-.246h-.573a7.309,7.309,0,1,0-1.266,1.266v.573a.843.843,0,0,0,.246.6l3.505,3.505a.84.84,0,0,0,1.192,0l.995-.995a.848.848,0,0,0,0-1.2ZM7.312,11.812a4.5,4.5,0,1,1,4.5-4.5A4.5,4.5,0,0,1,7.312,11.812Z"
+                        fill="#3e3e3e"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<script></script>
+
+<style>
+    .navbar__container {
+        width: 100%;
+        max-width: var(--layout-max-width);
+        margin: 0 auto;
+        position: relative;
+        background-color: var(--color-turqoise);
+    }
+
+    .navbar__content {
+        padding: 0 2rem;
+        margin-top: 5rem;
+        display: flex;
+    }
+
+    .navbar__content::before {
+        content: '';
+        width: 196px;
+    }
+
+    .navbar__logo {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .navlinks__wrapper {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .links {
+        margin-left: 2rem;
+        display: flex;
+    }
+
+    .links li {
+        padding: 1rem 0;
+        max-width: 150px;
+        width: 150px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .links li:hover {
+        background-color: #0857a1;
+        color: white;
+    }
+
+    .dropdown-menu {
+        --bs-dropdown-bg: #0857a1;
+        --bs-dropdown-link-hover-bg: #6e98bf;
+        --bs-dropdown-link-hover-color: #fff;
+        --bs-dropdown-link-color: #fff;
+    }
+
+    .dropdown__container {
+        display: none;
+    }
+
+    .navlink__search {
+        background-color: white;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px 0;
+    }
+</style>
